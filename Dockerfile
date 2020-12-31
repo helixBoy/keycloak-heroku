@@ -1,9 +1,7 @@
-FROM quay.io/keycloak/keycloak:12.0.1
-ENV KEYCLOAK_USER=admin
-ENV KEYCLOAK_PASSWORD=admin
+FROM jboss/keycloak:latest
 
-# COPY docker-entrypoint.sh /opt/jboss/tools
+COPY docker-entrypoint.sh /opt/jboss/tools
 
-# ENTRYPOINT [ "/opt/jboss/tools/docker-entrypoint.sh" ]
-# CMD ["-b", "0.0.0.0"]
+ENTRYPOINT [ "/opt/jboss/tools/docker-entrypoint.sh" ]
+CMD ["-b", "0.0.0.0"]
 
